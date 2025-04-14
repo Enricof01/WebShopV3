@@ -365,8 +365,9 @@
                     <div class="card-body">
                         <h5 class="card-title"><strong>Folgen Sie uns auf Social Media</strong></h5>
                         <ul class="social-icons">
-                            <a href=""><i class="bx bxl-facebook-circle"></i></a>
-                            <a href=""><i class="bx bxl-instagram"></i></a>
+                            <a class="icon"><i class="bx bxl-facebook-circle"></i></a>
+                            <audio id="sound" src="../sounds/hub.mp3"></audio>
+                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="bx bxl-instagram"></i></a>
                             <a href=""><i class='bx bxl-youtube'></i></a>
                             <a href=""><i class="bx bxl-linkedin-square"></i></a>
                         </ul>
@@ -381,6 +382,12 @@
         <div class="bottom-bar" style="text-align: center;">
             <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
         </div>
+        <!-- FB/Hub -->
+        <script>
+            document.querySelector('.icon').addEventListener('click', function () {
+                document.getElementById('sound').play();
+            });
+        </script>
     </footer>
 </body>
 
