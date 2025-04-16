@@ -29,23 +29,23 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="products.html" style="font-size: 22px; font-weight: bold;"><i
-                                    class='bx bxs-coffee-bean'></i> Products</a>
+                                    class='bx bxs-coffee-bean'></i> Produkte</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="shoppingCart.html" style="font-size: 22px; font-weight: bold;"><i
-                                    class='bx bx-cart'></i> Basket</a>
+                                    class='bx bx-cart'></i> Einkaufswagen</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="User.html" style="font-size: 22px; font-weight: bold;"><i
-                                    class='bx bx-user'></i> User</a>
+                                    class='bx bx-user'></i> Benutzer</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html" style="font-size: 22px;"> Login</a>
+                            <a class="nav-link" href="login.html" style="font-size: 22px;"> Anmelden</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-search" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Suche" aria-label="Search">
+                        <button class="btn btn-search" type="submit">Suche</button>
                     </form>
                 </div>
             </div>
@@ -338,7 +338,6 @@
         </div>
     </div>
     <div id="soundfiles"></div>
-    <script src="../js/game.js"></script>
     <script src="../extern/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Footer+Impressum -->
     <footer>
@@ -350,12 +349,12 @@
                         <h5 class="card-title"><strong>Custom Chocolate Company</strong></h5>
                         <p class="card-text">Burgstraße 1. | 72764 Reutlingen</p>
                         <p class="card-text">07121/67890 | info@schokolade.de</p>
-                        <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+                        <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
                         <button class="btn btn-search"><a href="datenschutz.html">
                                 <strong>Datenschutz</strong></a></button>
-                        <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+                        <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
                         <button class="btn btn-search"><a href=""> <strong>AGB</strong></a></button>
-                        <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+                        <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
                         <button class="btn btn-search"><a href="impressum.html"> <strong>Impressum</strong></a></button>
                     </div>
                 </div>
@@ -367,11 +366,12 @@
                         <ul class="social-icons">
                             <a class="icon"><i class="bx bxl-facebook-circle"></i></a>
                             <audio id="sound" src="../sounds/hub.mp3"></audio>
-                            <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class="bx bxl-instagram"></i></a>
+                            <a class="icon1"><i class="bx bxl-instagram"></i></a>
+                            <audio id="sound1" src="../sounds/rick.mp3"></audio>
                             <a href=""><i class='bx bxl-youtube'></i></a>
                             <a href=""><i class="bx bxl-linkedin-square"></i></a>
                         </ul>
-                        <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+                        <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
                         <h5 class="card-title"><strong>Zahlungsarten</strong></h5>
                         <img src="https://www.lindt.de/media/wysiwyg/zahlungsarten-logos-2025.png" alt="Zahlungsarten"
                             class=" ls-is-cached lazyloaded" width="365" height="64">
@@ -382,13 +382,24 @@
         <div class="bottom-bar" style="text-align: center;">
             <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
         </div>
-        <!-- FB/Hub -->
+        <!-- FB/Insta/Hub -->
+        <div>
         <script>
             document.querySelector('.icon').addEventListener('click', function () {
                 document.getElementById('sound').play();
             });
         </script>
+        <script>
+            document.querySelector('.icon1').addEventListener('click', function () {
+                document.getElementById('sound1').play();
+            });
+        </script>
+        </div>
     </footer>
+    <!-- Arrow for Up moving -->
+    <a id="UpMove" href="#" class="btn btn-primary btn-lg">
+        <i class='bx bxs-up-arrow-circle'></i>
+    </a>
 </body>
 
 </html>
