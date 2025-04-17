@@ -1,0 +1,35 @@
+
+.cartBody{
+    margin-top: 5%;;
+}
+
+
+h2{
+    color: red;
+}
+
+.productImage{
+    
+}
+
+.product1{
+    /* margin-top: 10%; */
+}
+
+.price{
+    text-align: right;
+}
+
+hr{
+    margin:0;
+}
+
+.titleBox{
+    position: relative;
+}
+
+.rowPrice{
+    bottom: 0;
+    transform: translateY(100vh);
+}
+
