@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Site</title>
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/benutzer.css">
     <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -48,18 +49,46 @@
                 </div>
             </div>
         </nav>
-        <hr style="border: 5px solid black; margin: 0; margin-bottom: 5vh;">
+        <hr style="border: 5px solid black; margin: 0; margin-bottom: 0vh;">
     </header>
-    <div class="container">
+    <!-- Company Banner -->
+    <div class="container2">
         <div class="row">
-
+            <img src="../images/banner.png" alt="">
+            <hr style="border: 5px solid black; margin: 0; margin-bottom: 5vh;">
         </div>
     </div>
+    <!-- Benutzerprofil -->
+    <div class="container">
+        <header>
+            <h1>Benutzerprofil</h1>
+        </header>
+        <main>
+            <div class="profile-picture">
+                <img src="default-profile.png" alt="Profilbild" id="profileImage">
+                <input type="file" id="uploadImage" accept="image/*">
+            </div>
+            <div class="user-info">
+                <h2>Benutzername: <span id="username">Max Mustermann</span></h2>
+                <p>Email: <span id="email">max.mustermann@example.com</span></p>
+                <button id="editProfile">Profil bearbeiten</button>
+            </div>
+        </main>
+    </div>
+    <script src="../js/benutzer.js"></script>
+
     <script src="../extern/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Arrow for Up moving -->
     <a id="UpMove" href="#" class="btn btn-primary btn-lg">
         <i class='bx bxs-up-arrow-circle'></i>
     </a>
+    <!-- Arrow for Up moving -->
+    <a id="UpMove" href="#" class="btn btn-primary btn-lg">
+        <i class='bx bxs-up-arrow-circle'></i>
+    </a>
+    <div class="bottom-bar" style="text-align: center;">
+        <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
+    </div>
 </body>
 
 </html>
