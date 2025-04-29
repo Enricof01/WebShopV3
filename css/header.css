@@ -38,7 +38,7 @@ h3 {
 }
 
 h3 p {
-    font-size: calc(0.65vw + 0.65vh + 0.1vmin);
+    font-size: calc(0.85vw + 0.85vh + 0.1vmin);
 }
 
 /*Arrow Up Move*/

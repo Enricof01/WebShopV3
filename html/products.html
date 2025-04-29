@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/products.css">
-  <link rel="stylesheet" href="../css/header.css">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/products.css">
+<link rel="stylesheet" href="../css/header.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <title>Products</title>
+<title>Products</title>
 </head>
 
 <body>
@@ -34,7 +33,8 @@
                   class='bx bxs-coffee-bean'></i> Produkte</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="shoppingCart.html" style="font-size: 22px; font-weight: bold;"><i class='bx bx-cart'></i>
+              <a class="nav-link" href="shoppingCart.html" style="font-size: 22px; font-weight: bold;"><i
+                  class='bx bx-cart'></i>
                 Einkaufswagen</a>
             </li>
             <li class="nav-item">
@@ -57,200 +57,234 @@
 
   <!-- Product overview -->
 
-  <div class = "container productArea">
-
-  <div class = "row">
-
-
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button id = "1product"onclick="add(event)" type="button" class="btn btn-dark">Shop Now</button>
+  <div class="container productArea">
+    <!-- Reihe Eins Produkte -->
+    <div class="row">
+      <h1 style="text-align: center; font-weight: bold;">Unsere Klassiker</h1>
+      <br>
+      <br>
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/vollmilch.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button id="1product" onclick="add(event)" type="button" class="btn btn-dark">Shop Now</button>
+          </div>
         </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
-
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>VOLLMILCH <br>3,99 €</p></h3>
         </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
 
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/dunkel.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
         </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
-
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>EDELBITTER <br>4,99 €</p></h3>
         </div>
+
       </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/Nuss.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>NUSS GENUSS <br>5,99 €</p></h3>
+        </div>
+
       </div>
- 
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/weiße.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>VANILLETRAUM <br>3,99 €</p></h3>
+        </div>
+
+      </div>
+
+
     </div>
+    <!-- Reihe Zwei Produkte -->
+    <div class="row productRow2">
+      <h1 style="text-align: center; font-weight: bold;">Unsere Sommer Hits</h1>
+      <br>
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/minze.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>MINZTRAUM <br>4,99 €</p></h3>
+        </div>
+
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/erdbeere.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>ERDBEERSCHOKOLADE <br>5,99 €</p></h3>
+        </div>
+
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/himbeer.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>HIMBEERSCHOKOLADE <br>5,99 €</p></h3>
+        </div>
+
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/mango.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>KARIBISCHE MANGO <br>5,99 €</p></h3>
+        </div>
+
+      </div>
 
 
+    </div>
+    <!-- Reihe Drei Produkte -->
+    <div class="row productRow2">
+      <h1 style="text-align: center; font-weight: bold;">Unsere Spezialsorten</h1>
+      <br>
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/dubai.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>DUBAI SCHOKOLADE <br>12,99 €</p></h3>
+        </div>
+
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/kaffee.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>KAFFEEZAUBER <br>6,99 €</p></h3>
+        </div>
+
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/lemon.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>ERDBEERE ZITRONE <br>6,99 €</p></h3>
+        </div>
+
+      </div>
+
+      <div class="col-5 product1">
+        <div class="imgContainer1">
+          <img src="../images/Produkte/chilli.png" alt="" class="img-fluid">
+          <div class="buyBar1">
+            <button type="button" class="btn btn-dark">Shop Now</button>
+          </div>
+        </div>
+        <div class="priceBox1">
+          <h3 style="text-align: center; font-weight: bold;"><p>CHILLILADE <br>6,99 €</p></h3>
+        </div>
+
+      </div>
+
+
+    </div>
   </div>
-
-  <div class = "row productRow2">
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
-        </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
-
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
-        </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
-
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
-        </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
-
-    <div class = "col-5 product1">
-      <div class = "imgContainer1">
-        <img src="https://placehold.co/250x250" alt="" class="img-fluid">
-        <div class = "buyBar1">
-          <button type="button" class="btn btn-dark">Shop Now</button>
-        </div>
-      </div>
-      <div class = "priceBox1">
-        <p>Alpenmilch <br>14,99</p>
-      </div>
- 
-    </div>
-    
-
-  </div>
-
-</div>
-
-
-  
-  
-
-  
 
   <script src="../extern/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src = "../js/cart.js"></script>
-
-  </script>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <script src="../js/cart.js"></script>
   <br>
   <br>
   <!-- Footer+Impressum -->
   <footer>
     <hr style="border: 5px solid black; margin: 0; margin-top: 5vh;">
     <div class="row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><strong>Custom Chocolate Company</strong></h5>
-                    <p class="card-text">Burgstraße 1. | 72764 Reutlingen</p>
-                    <p class="card-text">07121/67890 | info@schokolade.de</p>
-                    <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-                    <button class="btn btn-search"><a href="datenschutz.html">
-                            <strong>Datenschutz</strong></a></button>
-                    <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-                    <button class="btn btn-search"><a href=""> <strong>AGB</strong></a></button>
-                    <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-                    <button class="btn btn-search"><a href="impressum.html"> <strong>Impressum</strong></a></button>
-                </div>
-            </div>
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Custom Chocolate Company</strong></h5>
+            <p class="card-text">Burgstraße 1. | 72764 Reutlingen</p>
+            <p class="card-text">07121/67890 | info@schokolade.de</p>
+            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+            <button class="btn btn-search"><a href="datenschutz.html">
+                <strong>Datenschutz</strong></a></button>
+            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+            <button class="btn btn-search"><a href=""> <strong>AGB</strong></a></button>
+            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+            <button class="btn btn-search"><a href="impressum.html"> <strong>Impressum</strong></a></button>
+          </div>
         </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><strong>Folgen Sie uns auf Social Media</strong></h5>
-                    <ul class="social-icons">
-                        <a href=""><i class="bx bxl-facebook-circle"></i></a>
-                        <a href=""><i class="bx bxl-instagram"></i></a>
-                        <a href=""><i class='bx bxl-youtube'></i></a>
-                        <a href=""><i class="bx bxl-linkedin-square"></i></a>
-                    </ul>
-                    <hr style="border: 2px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-                    <h5 class="card-title"><strong>Zahlungsarten</strong></h5>
-                    <img src="https://www.lindt.de/media/wysiwyg/zahlungsarten-logos-2025.png" alt="Zahlungsarten"
-                        class=" ls-is-cached lazyloaded" width="365" height="64">
-                </div>
-            </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><strong>Folgen Sie uns auf Social Media</strong></h5>
+            <ul class="social-icons">
+              <a href=""><i class="bx bxl-facebook-circle"></i></a>
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class='bx bxl-youtube'></i></a>
+              <a href=""><i class="bx bxl-linkedin-square"></i></a>
+            </ul>
+            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
+            <h5 class="card-title"><strong>Zahlungsarten</strong></h5>
+            <img src="https://www.lindt.de/media/wysiwyg/zahlungsarten-logos-2025.png" alt="Zahlungsarten"
+              class=" ls-is-cached lazyloaded" width="365" height="64">
+          </div>
         </div>
+      </div>
     </div>
     <div class="bottom-bar" style="text-align: center;">
-        <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
+      <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
     </div>
-</footer>
-<!-- Arrow for Up moving -->
-<a id="UpMove" href="#" class="btn btn-primary btn-lg">
-  <i class='bx bxs-up-arrow-circle'></i>
-</a>
+  </footer>
+  <!-- Arrow for Up moving -->
+  <a id="UpMove" href="#" class="btn btn-primary btn-lg">
+    <i class='bx bxs-up-arrow-circle'></i>
+  </a>
 </body>
 
 </html>
