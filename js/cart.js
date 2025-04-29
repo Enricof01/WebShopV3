@@ -1,5 +1,91 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+const products = [
+    {
+        index:0,
+        name: "Vollmilch",
+        price: 3.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:1,
+        name: "Edelbitter",
+        price: 4.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:2,
+        name: "Nuss Genuss",
+        price: 5.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:3,
+        name: "Vanilletraum",
+        price: 3.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:4,
+        name: "Minztraum",
+        price: 4.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:5,
+        name: "Erdbeerschokolade",
+        price: 5.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:6,
+        name: "Himmbeerschokolade",
+        price: 5.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:7,
+        name: "Karibische Mango",
+        price: 5.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:8,
+        name: "Dubai Schokolade",
+        price: 3.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:9,
+        name: "Kaffeezauber",
+        price: 6.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:10,
+        name: "Erdbeer Zitrone",
+        price: 6.99,
+        description: "Please enter description amk"
+    },
+
+    {
+        index:11,
+        name: "Chillade",
+        price: 6.99,
+        description: "Please enter description amk"
+    },
+]
+
 function add(event){
     console.log('button wurde geklickt' + event.target.id)
     
@@ -42,8 +128,13 @@ function add(event){
 function updateCart2(){
     const cartArea = document.querySelector(".cartBody")
 
+    console.log(products[0].name)
+
     cart.forEach((item,index) =>{
-        cartArea.innerHTML += `<div class = "row product1">
+        cartArea.innerHTML += `
+         <hr>
+
+        <div class = "row product1">
         <div class = "col-2">
 
             <div class = "productImage">
@@ -74,6 +165,8 @@ function updateCart2(){
         </div>
 
     </div>
+
+
         
         `;
     })
