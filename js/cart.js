@@ -5,91 +5,108 @@ const products = [
         index:0,
         name: "Vollmilch",
         price: 3.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:1,
         name: "Edelbitter",
         price: 4.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "../images/Produkte/dunkel.png"
+
     },
 
     {
         index:2,
         name: "Nuss Genuss",
         price: 5.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:3,
         name: "Vanilletraum",
         price: 3.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:4,
         name: "Minztraum",
         price: 4.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:5,
         name: "Erdbeerschokolade",
         price: 5.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:6,
         name: "Himmbeerschokolade",
         price: 5.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:7,
         name: "Karibische Mango",
         price: 5.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:8,
         name: "Dubai Schokolade",
         price: 3.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:9,
         name: "Kaffeezauber",
         price: 6.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:10,
         name: "Erdbeer Zitrone",
         price: 6.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 
     {
         index:11,
         name: "Chillade",
         price: 6.99,
-        description: "Please enter description amk"
+        description: "Please enter description amk",
+        imageSrc: "https://placehold.co/150x150"
     },
 ]
 
 function add(event){
     console.log('button wurde geklickt' + event.target.id)
+
+    let buttonId = event.target.id;
+    let index = parseInt(buttonId.replace("button", ""));
+    console.log(index)
     
-    let newItem = { id: 1, name: event.target.id, quantity: 1, price: "14,99"};
+    let newItem = products[index]
     cart.push(newItem);
     localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -126,11 +143,17 @@ function add(event){
 // }
 
 function updateCart2(){
-    const cartArea = document.querySelector(".cartBody")
 
-    console.log(products[0].name)
+    const cartArea = document.querySelector(".cartArea")
+    currentCart = JSON.parse(localStorage.getItem('cart'));
 
-    cart.forEach((item,index) =>{
+    cartArea.innerHTML = '';
+
+    // console.log(currentCart[4].price)
+
+    cart.forEach((item) =>{
+        console.log(item.imageSrc)
+
         cartArea.innerHTML += `
          <hr>
 
@@ -138,13 +161,13 @@ function updateCart2(){
         <div class = "col-2">
 
             <div class = "productImage">
-                <img src="https://placehold.co/150x150" alt="" class = "img-fluid">
+                <img src= ${item.imageSrc} alt="" class = "img-fluid">
             </div>
 
         </div>
 
         <div class = "col-5">
-            <p>Prodcut description and more details</p>
+            <p>${item.name} <br> ${item.description}</p>
             <select class="form-select" aria-label="Default select example" style = "width: 20%;">
                 <option selected>1</option>
                 <option value="1">2</option>
@@ -159,7 +182,7 @@ function updateCart2(){
 
         <div class = "col-5 price">
             <div class = "productPrice">
-                <p>29,99</p>
+                <p>${item.price}</p>
             </div>
 
         </div>
