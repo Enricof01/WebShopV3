@@ -149,10 +149,8 @@ function updateCart2(){
 
     cartArea.innerHTML = '';
 
-    // console.log(currentCart[4].price)
 
     cart.forEach((item,index) =>{
-        console.log(item.imageSrc)
 
         cartArea.innerHTML += `
 
@@ -174,14 +172,14 @@ function updateCart2(){
                 <option value="3">4</option>
               </select>
               <div style="margin-top: 1%;">
-                <button id = "remove${index}"onclick = "removeItem(event)" type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
+                <button id = "remove${index}"onclick = "removeItem(${index})" type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
 
               </div>
         </div>
 
         <div class = "col-5 price">
             <div class = "productPrice">
-                <p>${item.price}</p>
+                <p>${item.price}, ${index}</p>
             </div>
 
         </div>
@@ -195,14 +193,13 @@ function updateCart2(){
     })
 }
 
-function removeItem(event){
-    console.log('remove')
-    console.log(event.target.id)
+function removeItem(number){
+    // console.log(event.target.id)
 
-    let removeButtonId = event.target.id;
-    let removeindex = parseInt(removeButtonId.replace("remove", ""));
+    // let removeButtonId = event.target.id;
+    // let removeindex = parseInt(removeButtonId.replace("remove", ""));
 
-
+    removeindex = number;
     cart.splice(removeindex,1);
 
     localStorage.setItem('cart', JSON.stringify(cart))
