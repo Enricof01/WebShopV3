@@ -6,7 +6,7 @@ const products = [
         name: "Vollmilch",
         price: 3.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/vollmilch.png"
     },
 
     {
@@ -23,7 +23,7 @@ const products = [
         name: "Nuss Genuss",
         price: 5.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/Nuss.png"
     },
 
     {
@@ -31,7 +31,7 @@ const products = [
         name: "Vanilletraum",
         price: 3.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/weiße.png"
     },
 
     {
@@ -39,7 +39,7 @@ const products = [
         name: "Minztraum",
         price: 4.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/minze.png"
     },
 
     {
@@ -47,7 +47,7 @@ const products = [
         name: "Erdbeerschokolade",
         price: 5.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/erdbeere.png"
     },
 
     {
@@ -55,7 +55,7 @@ const products = [
         name: "Himmbeerschokolade",
         price: 5.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/himbeer.png"
     },
 
     {
@@ -63,7 +63,7 @@ const products = [
         name: "Karibische Mango",
         price: 5.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/mango.png"
     },
 
     {
@@ -71,7 +71,7 @@ const products = [
         name: "Dubai Schokolade",
         price: 3.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/dubai.png"
     },
 
     {
@@ -79,7 +79,7 @@ const products = [
         name: "Kaffeezauber",
         price: 6.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/kaffee.png"
     },
 
     {
@@ -87,7 +87,7 @@ const products = [
         name: "Erdbeer Zitrone",
         price: 6.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/lemon.png"
     },
 
     {
@@ -95,7 +95,7 @@ const products = [
         name: "Chillade",
         price: 6.99,
         description: "Please enter description amk",
-        imageSrc: "https://placehold.co/150x150"
+        imageSrc: "../images/Produkte/chilli.png"
     },
 ]
 
@@ -103,7 +103,7 @@ function add(event){
     console.log('button wurde geklickt' + event.target.id)
 
     let buttonId = event.target.id;
-    let index = parseInt(buttonId.replace("button", ""));
+    let index = parseInt(buttonId.replace("product", ""));
     console.log(index)
     
     let newItem = products[index]
@@ -151,11 +151,10 @@ function updateCart2(){
 
     // console.log(currentCart[4].price)
 
-    cart.forEach((item) =>{
+    cart.forEach((item,index) =>{
         console.log(item.imageSrc)
 
         cartArea.innerHTML += `
-         <hr>
 
         <div class = "row product1">
         <div class = "col-2">
@@ -175,7 +174,7 @@ function updateCart2(){
                 <option value="3">4</option>
               </select>
               <div style="margin-top: 1%;">
-                <button onclick = "updateCart();"type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
+                <button id = "remove${index}"onclick = "removeItem(event)" type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
 
               </div>
         </div>
@@ -188,9 +187,25 @@ function updateCart2(){
         </div>
 
     </div>
+         <hr>
 
 
         
         `;
     })
+}
+
+function removeItem(event){
+    console.log('remove')
+    console.log(event.target.id)
+
+    let removeButtonId = event.target.id;
+    let removeindex = parseInt(removeButtonId.replace("remove", ""));
+
+
+    cart.splice(removeindex,1);
+
+    localStorage.setItem('cart', JSON.stringify(cart))
+    updateCart2();
+
 }
