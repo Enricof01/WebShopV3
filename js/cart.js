@@ -2,109 +2,119 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const products = [
     {
-        index:0,
+        productNo:0,
         name: "Vollmilch",
         price: "3,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/vollmilch.png"
+        imageSrc: "../images/Produkte/vollmilch.png",
+        quantity: 1
     },
 
     {
-        index:1,
+        productNo:1,
         name: "Edelbitter",
         price: "4,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/dunkel.png"
-
+        imageSrc: "../images/Produkte/dunkel.png",
+        quantity: 1
     },
 
     {
-        index:2,
+        productNo:2,
         name: "Nuss Genuss",
         price:"5,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/Nuss.png"
+        imageSrc: "../images/Produkte/Nuss.png",
+        quantity: 1
     },
 
     {
-        index:3,
+        productNo:3,
         name: "Vanilletraum",
         price: "3,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/weiße.png"
+        imageSrc: "../images/Produkte/weiße.png",
+        quantity: 1
     },
 
     {
-        index:4,
+        productNo:4,
         name: "Minztraum",
         price: "4,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/minze.png"
+        imageSrc: "../images/Produkte/minze.png",
+        quantity: 1
     },
 
     {
-        index:5,
+        productNo:5,
         name: "Erdbeerschokolade",
         price: "5,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/erdbeere.png"
+        imageSrc: "../images/Produkte/erdbeere.png",
+        quantity: 1
     },
 
     {
-        index:6,
+        productNo:6,
         name: "Himmbeerschokolade",
         price: "5,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/himbeer.png"
+        imageSrc: "../images/Produkte/himbeer.png",
+        quantity: 1
     },
 
     {
-        index:7,
+        productNo:7,
         name: "Karibische Mango",
         price: "5,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/mango.png"
+        imageSrc: "../images/Produkte/mango.png",
+        quantity: 1
     },
 
     {
-        index:8,
+        productNo:8,
         name: "Dubai Schokolade",
         price: "3,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/dubai.png"
+        imageSrc: "../images/Produkte/dubai.png",
+        quantity: 1
     },
 
     {
-        index:9,
+        productNo:9,
         name: "Kaffeezauber",
         price: "6,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/kaffee.png"
+        imageSrc: "../images/Produkte/kaffee.png",
+        quantity: 1
     },
 
     {
-        index:10,
+        productNo:10,
         name: "Erdbeer Zitrone",
         price: "6,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/lemon.png"
+        imageSrc: "../images/Produkte/lemon.png",
+        quantity: 1
     },
 
     {
-        index:11,
+        productNo:11,
         name: "Chillade",
         price: "6,99",
         description: "Please enter description amk",
-        imageSrc: "../images/Produkte/chilli.png"
+        imageSrc: "../images/Produkte/chilli.png",
+        quantity: 1
     },
 ]
 
 function add(event){
-    console.log('button wurde geklickt' + event.target.id)
 
     let buttonId = event.target.id;
-    let index = parseInt(buttonId.replace("product", ""));
-    console.log(index)
+    let productNo = parseInt(buttonId.replace("product", ""));
+    console.log("Index of product: " + productNo)
     alreadyInCart = false;
 
     
@@ -113,27 +123,48 @@ function add(event){
 
     cart.forEach(item =>{
         // console.log(item)
-        if(index == item.index)
+        if(productNo == item.productNo)
         {
             alreadyInCart = true;
+            cartIndex = cart.findIndex(product => product.name === item.name)
+
+            console.log("Index of: " + cartIndex)
         }
     });
 
+
+    //If not already in cart we push a new Element to the array
+
     if (!alreadyInCart)
     {
-        let newItem = products[index]
+        let newItem = products[productNo]
         cart.push(newItem);
         localStorage.setItem('cart', JSON.stringify(cart));
     
         let currentCart = JSON.parse(localStorage.getItem('cart'));
         console.log(currentCart);
 
-        alert(products[index].name + " zum Warenkorb hinzugefügt")
+        alert(products[productNo].name + " zum Warenkorb hinzugefügt")
 
     }
 
+    //If the product is already in cart we just add up the quantity
+
     else{
-        alert("prodcut already in cart")
+
+        //Looking for the index of the product which has already been in cart
+
+        if(cart[cartIndex].quantity < 4)
+        {
+            cart[cartIndex].quantity += 1;
+            alert(products[productNo].name + " zum Warenkorb hinzugefügt")
+        } 
+
+        else{
+            alert("max number reached")
+        }
+
+        console.log("Quantity of " + products[productNo].name + " product just added: " + cart[productNo].quantity);
     }
 
 
