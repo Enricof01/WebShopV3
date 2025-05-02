@@ -4,7 +4,7 @@ const products = [
     {
         index:0,
         name: "Vollmilch",
-        price: 3.99,
+        price: "3,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/vollmilch.png"
     },
@@ -12,7 +12,7 @@ const products = [
     {
         index:1,
         name: "Edelbitter",
-        price: 4.99,
+        price: "4,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/dunkel.png"
 
@@ -21,7 +21,7 @@ const products = [
     {
         index:2,
         name: "Nuss Genuss",
-        price: 5.99,
+        price:"5,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/Nuss.png"
     },
@@ -29,7 +29,7 @@ const products = [
     {
         index:3,
         name: "Vanilletraum",
-        price: 3.99,
+        price: "3,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/weiße.png"
     },
@@ -37,7 +37,7 @@ const products = [
     {
         index:4,
         name: "Minztraum",
-        price: 4.99,
+        price: "4,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/minze.png"
     },
@@ -45,7 +45,7 @@ const products = [
     {
         index:5,
         name: "Erdbeerschokolade",
-        price: 5.99,
+        price: "5,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/erdbeere.png"
     },
@@ -53,7 +53,7 @@ const products = [
     {
         index:6,
         name: "Himmbeerschokolade",
-        price: 5.99,
+        price: "5,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/himbeer.png"
     },
@@ -61,7 +61,7 @@ const products = [
     {
         index:7,
         name: "Karibische Mango",
-        price: 5.99,
+        price: "5,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/mango.png"
     },
@@ -69,7 +69,7 @@ const products = [
     {
         index:8,
         name: "Dubai Schokolade",
-        price: 3.99,
+        price: "3,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/dubai.png"
     },
@@ -77,7 +77,7 @@ const products = [
     {
         index:9,
         name: "Kaffeezauber",
-        price: 6.99,
+        price: "6,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/kaffee.png"
     },
@@ -85,7 +85,7 @@ const products = [
     {
         index:10,
         name: "Erdbeer Zitrone",
-        price: 6.99,
+        price: "6,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/lemon.png"
     },
@@ -93,7 +93,7 @@ const products = [
     {
         index:11,
         name: "Chillade",
-        price: 6.99,
+        price: "6,99",
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/chilli.png"
     },
@@ -105,16 +105,37 @@ function add(event){
     let buttonId = event.target.id;
     let index = parseInt(buttonId.replace("product", ""));
     console.log(index)
-    
-    let newItem = products[index]
-    cart.push(newItem);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    alreadyInCart = false;
 
-    let currentCart = JSON.parse(localStorage.getItem('cart'));
-    console.log(currentCart);
+    
+    
+
+
     cart.forEach(item =>{
-        console.log(item)
+        // console.log(item)
+        if(index == item.index)
+        {
+            alreadyInCart = true;
+        }
     });
+
+    if (!alreadyInCart)
+    {
+        let newItem = products[index]
+        cart.push(newItem);
+        localStorage.setItem('cart', JSON.stringify(cart));
+    
+        let currentCart = JSON.parse(localStorage.getItem('cart'));
+        console.log(currentCart);
+
+        alert(products[index].name + " zum Warenkorb hinzugefügt")
+
+    }
+
+    else{
+        alert("prodcut already in cart")
+    }
+
 
 }
 
@@ -179,7 +200,7 @@ function updateCart2(){
 
         <div class = "col-5 price">
             <div class = "productPrice">
-                <p>${item.price}, ${index}</p>
+                <p>${item.price}€</p>
             </div>
 
         </div>
