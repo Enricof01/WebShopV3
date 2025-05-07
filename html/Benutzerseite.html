@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Site</title>
+    <title>Ihr Benutzerprofil</title>
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/benutzer.css">
     <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -59,33 +59,36 @@
         </div>
     </div>
     <!-- Benutzerprofil -->
-    <div class="container">
-        <header>
-            <h1>Benutzerprofil</h1>
-        </header>
-        <main>
-            <div class="profile-picture">
-                <img src="default-profile.png" alt="Profilbild" id="profileImage">
-                <input type="file" id="uploadImage" accept="image/*">
+    <div class="row">
+        <div class="container_Benutzer">
+            <h1>Ihr Benutzerprofil</h1>
+            <div class="profile-content">
+                <div id="profilePicPreview"></div>
+                <form id="profileForm">
+                    <div class="form-group">
+                        <label for="name" style="font-weight: bold;">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="font-weight: bold;">E-Mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePic" style="font-weight: bold;">Profilbild:</label>
+                        <input type="file" id="profilePic" name="profilePic" accept="image/*">
+                    </div>
+                    <button type="submit">Speichern</button>
+                </form>
             </div>
-            <div class="user-info">
-                <h2>Benutzername: <span id="username">Max Mustermann</span></h2>
-                <p>Email: <span id="email">max.mustermann@example.com</span></p>
-                <button id="editProfile">Profil bearbeiten</button>
-            </div>
-        </main>
+        </div>
     </div>
     <script src="../js/benutzer.js"></script>
-
     <script src="../extern/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Arrow for Up moving -->
     <a id="UpMove" href="#" class="btn btn-primary btn-lg">
         <i class='bx bxs-up-arrow-circle'></i>
     </a>
-    <!-- Arrow for Up moving -->
-    <a id="UpMove" href="#" class="btn btn-primary btn-lg">
-        <i class='bx bxs-up-arrow-circle'></i>
-    </a>
+    <hr style="border: 5px solid black; margin: 0; margin-top: 5vh;">
     <div class="bottom-bar" style="text-align: center;">
         <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
     </div>
