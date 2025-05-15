@@ -218,7 +218,8 @@ function updateCart2(){
         <div class = "col-5">
             <p>${item.name} <br> ${item.description}</p>
             <select class="form-select" aria-label="Default select example" style = "width: 20%;" id = "selectedQuantity${index}" onchange = "changeQuantity(event);">
-                <option selected id = "option">${item.quantity}</option>
+                <option selected disabled hidden id = "option">${item.quantity}</option>
+
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -266,8 +267,8 @@ function changeQuantity(event) {
 
     let quantityId = event.target.id;
 
-    let option = document.getElementById('option');
 
+   
 
     let productIndex = parseInt(quantityId.replace("selectedQuantity", ""));
 
