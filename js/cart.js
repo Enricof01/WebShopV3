@@ -4,16 +4,16 @@ const products = [
     {
         productNo:0,
         name: "Vollmilch",
-        price: "3,99",
+        price: 3.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/vollmilch.png",
-        quantity: 1
+        quantity: 1.00
     },
 
     {
         productNo:1,
         name: "Edelbitter",
-        price: "4,99",
+        price: 4.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/dunkel.png",
         quantity: 1
@@ -22,7 +22,7 @@ const products = [
     {
         productNo:2,
         name: "Nuss Genuss",
-        price:"5,99",
+        price:5.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/Nuss.png",
         quantity: 1
@@ -31,7 +31,7 @@ const products = [
     {
         productNo:3,
         name: "Vanilletraum",
-        price: "3,99",
+        price: 3.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/weiße.png",
         quantity: 1
@@ -40,7 +40,7 @@ const products = [
     {
         productNo:4,
         name: "Minztraum",
-        price: "4,99",
+        price: 4.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/minze.png",
         quantity: 1
@@ -49,7 +49,7 @@ const products = [
     {
         productNo:5,
         name: "Erdbeerschokolade",
-        price: "5,99",
+        price: 5.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/erdbeere.png",
         quantity: 1
@@ -58,7 +58,7 @@ const products = [
     {
         productNo:6,
         name: "Himmbeerschokolade",
-        price: "5,99",
+        price: 5.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/himbeer.png",
         quantity: 1
@@ -67,7 +67,7 @@ const products = [
     {
         productNo:7,
         name: "Karibische Mango",
-        price: "5,99",
+        price: 5.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/mango.png",
         quantity: 1
@@ -76,7 +76,7 @@ const products = [
     {
         productNo:8,
         name: "Dubai Schokolade",
-        price: "3,99",
+        price: 3.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/dubai.png",
         quantity: 1
@@ -85,7 +85,7 @@ const products = [
     {
         productNo:9,
         name: "Kaffeezauber",
-        price: "6,99",
+        price: 6.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/kaffee.png",
         quantity: 1
@@ -94,7 +94,7 @@ const products = [
     {
         productNo:10,
         name: "Erdbeer Zitrone",
-        price: "6,99",
+        price: 6.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/lemon.png",
         quantity: 1
@@ -103,7 +103,7 @@ const products = [
     {
         productNo:11,
         name: "Chillade",
-        price: "6,99",
+        price: 6.99,
         description: "Please enter description amk",
         imageSrc: "../images/Produkte/chilli.png",
         quantity: 1
@@ -152,19 +152,19 @@ function add(event){
 
     else{
 
-        //Looking for the index of the product which has already been in cart
 
         if(cart[cartIndex].quantity < 4)
         {
             cart[cartIndex].quantity += 1;
             alert(products[productNo].name + " zum Warenkorb hinzugefügt")
+            localStorage.setItem('cart', JSON.stringify(cart));
         } 
 
         else{
             alert("max number reached")
         }
 
-        console.log("Quantity of " + products[productNo].name + " product just added: " + cart[productNo].quantity);
+        console.log("Quantity of " + products[productNo].name + " product just added: " + cart[cartIndex].quantity);
     }
 
 
@@ -217,11 +217,12 @@ function updateCart2(){
 
         <div class = "col-5">
             <p>${item.name} <br> ${item.description}</p>
-            <select class="form-select" aria-label="Default select example" style = "width: 20%;">
-                <option selected>1</option>
-                <option value="1">2</option>
-                <option value="2">3</option>
-                <option value="3">4</option>
+            <select class="form-select" aria-label="Default select example" style = "width: 20%;" id = "selectedQuantity${index}" onchange = "changeQuantity(event);">
+                <option selected id = "option">${item.quantity}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select>
               <div style="margin-top: 1%;">
                 <button id = "remove${index}"onclick = "removeItem(${index})" type="button" class="btn btn-danger"><i class='bx bx-trash'></i></button>
@@ -231,7 +232,7 @@ function updateCart2(){
 
         <div class = "col-5 price">
             <div class = "productPrice">
-                <p>${item.price}€</p>
+                <p>${item.price * item.quantity}€</p>         
             </div>
 
         </div>
@@ -258,3 +259,27 @@ function removeItem(number){
     updateCart2();
 
 }
+
+
+
+function changeQuantity(event) {
+
+    let quantityId = event.target.id;
+
+    let option = document.getElementById('option');
+
+
+    let productIndex = parseInt(quantityId.replace("selectedQuantity", ""));
+
+ 
+
+    console.log(event.target.value);
+
+    cart[productIndex].quantity = event.target.value;
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    updateCart2();
+    
+}
+
