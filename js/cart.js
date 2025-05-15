@@ -276,7 +276,7 @@ function changeQuantity(event) {
 
     console.log(event.target.value);
 
-    cart[productIndex].quantity = event.target.value;
+    cart[productIndex].quantity = parseInt(event.target.value);
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
