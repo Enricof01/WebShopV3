@@ -201,6 +201,8 @@ function updateCart2(){
 
     cartArea.innerHTML = '';
 
+    let sumField = document.getElementById('cartSum');
+
 
     cart.forEach((item,index) =>{
 
@@ -245,6 +247,19 @@ function updateCart2(){
         
         `;
     })
+
+    sumField.innerHTML = '';
+
+    let sum = 0
+    cart.forEach(item =>{
+        sum += item.price * item.quantity;
+    })
+
+    sumField.innerHTML = `
+        <h2 style = "float:right">Gesamtsumme: ${Math.floor(sum * 100)/100}€</h2>
+    `
+
+
 }
 
 function removeItem(number){
