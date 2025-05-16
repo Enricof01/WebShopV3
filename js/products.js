@@ -4,7 +4,7 @@ const productArea = document.getElementById('productArea');
 
 let filteredProducts;
 
-searchButton.addEventListener('click', function(event){
+searchButton.addEventListener('click', function (event) {
 
     event.preventDefault();
     let query = searchInupt.value.toLowerCase();
@@ -16,13 +16,12 @@ searchButton.addEventListener('click', function(event){
     displayProducts();
 });
 
-function displayProducts(){
+function displayProducts() {
     console.log(filteredProducts.length);
 
     productArea.innerHTML = '';
 
-    if(filteredProducts.length == 12)
-    {
+    if (filteredProducts.length == 12) {
         productArea.innerHTML = `
             <div class="row">
       <h1 style="text-align: center; font-weight: bold;">Unsere Klassiker</h1>
@@ -201,70 +200,74 @@ function displayProducts(){
         `;
     }
 
-    else if(filteredProducts.length == 0) {
+    else if (filteredProducts.length == 0) {
         productArea.innerHTML = '<h2>Keine Einträge</h2>';
     }
 
     else if (filteredProducts.length >= 1 && filteredProducts.length <= 4) {
 
+        const rowDiv = document.createElement('div');
+        rowDiv.className = "row"
 
         filteredProducts.forEach(product => {
-                // Erstelle das äußere Div
+            // Erstelle das äußere Div
 
-                const rowDiv = document.createElement('div');
-                rowDiv.className = "row"
-const productDiv = document.createElement("div");
-productDiv.className = "col-5 product1";
 
-// Erstelle das Bild-Container-Div
-const imgContainer = document.createElement("div");
-imgContainer.className = "imgContainer1";
+            const productDiv = document.createElement("div");
+            productDiv.className = "col-5 product1";
 
-// Bild-Element
-const img = document.createElement("img");
-img.src = "../images/Produkte/vollmilch.png";
-img.alt = "";
-img.className = "img-fluid";
+            // Erstelle das Bild-Container-Div
+            const imgContainer = document.createElement("div");
+            imgContainer.className = "imgContainer1";
 
-// BuyBar-Div mit Button
-const buyBar = document.createElement("div");
-buyBar.className = "buyBar1";
+            // Bild-Element
+            const img = document.createElement("img");
+            img.src = product.imageSrc;
+            img.alt = "";
+            img.className = "img-fluid";
 
-const button = document.createElement("button");
-button.id = "product0";
-button.className = "btn btn-dark";
-button.type = "button";
-button.textContent = "Shop Now";
-button.setAttribute("onclick", "add(event)");
+            // BuyBar-Div mit Button
+            const buyBar = document.createElement("div");
+            buyBar.className = "buyBar1";
 
-buyBar.appendChild(button);
+            const button = document.createElement("button");
+            button.id = `product${product.productNo}`;
+            button.className = "btn btn-dark";
+            button.type = "button";
+            button.textContent = "Shop Now";
+            button.setAttribute("onclick", "add(event)");
 
-// Alles ins Bild-Container-Div einfügen
-imgContainer.appendChild(img);
-imgContainer.appendChild(buyBar);
+            buyBar.appendChild(button);
 
-// Preis-Box
-const priceBox = document.createElement("div");
-priceBox.className = "priceBox1";
+            // Alles ins Bild-Container-Div einfügen
+            imgContainer.appendChild(img);
+            imgContainer.appendChild(buyBar);
 
-const h3 = document.createElement("h3");
-h3.style.textAlign = "center";
-h3.style.fontWeight = "bold";
+            // Preis-Box
+            const priceBox = document.createElement("div");
+            priceBox.className = "priceBox1";
 
-const p = document.createElement("p");
-p.innerHTML = "VOLLMILCH<br>3,99 €";
+            const h3 = document.createElement("h3");
+            h3.style.textAlign = "center";
+            h3.style.fontWeight = "bold";
 
-h3.appendChild(p);
-priceBox.appendChild(h3);
+            const p = document.createElement("p");
+            p.innerHTML = `${product.name}<br>${product.price} €`;
 
-// Alles zusammenfügen
-productDiv.appendChild(imgContainer);
-productDiv.appendChild(priceBox);
+            h3.appendChild(p);
+            priceBox.appendChild(h3);
 
-// In ein bestehendes Container-Element einfügen, z. B. mit ID "productContainer"
-rowDiv.appendChild(productDiv)
-productArea.appendChild(rowDiv);
-            
+            // Alles zusammenfügen
+            productDiv.appendChild(imgContainer);
+            productDiv.appendChild(priceBox);
+
+            rowDiv.appendChild(productDiv)
+
+
         });
+
+            // In ein bestehendes Container-Element einfügen, z. B. mit ID "productContainer"
+            productArea.appendChild(rowDiv);
+
     }
 }
