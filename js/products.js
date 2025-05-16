@@ -204,7 +204,7 @@ function displayProducts() {
         productArea.innerHTML = '<h2>Keine Einträge</h2>';
     }
 
-    else if (filteredProducts.length >= 1 && filteredProducts.length <= 4) {
+    else if (filteredProducts.length >= 1 && filteredProducts.length <= 11) {
 
         const rowDiv = document.createElement('div');
         rowDiv.className = "row"
