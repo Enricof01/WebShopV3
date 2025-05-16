@@ -255,8 +255,13 @@ function updateCart2(){
         sum += item.price * item.quantity;
     })
 
+    function truncateToTwoDecimals(value) {
+        let truncated = Math.floor(value * 100) / 100;
+        return truncated.toFixed(2); // liefert einen String mit genau 2 Nachkommastellen
+    }
+
     sumField.innerHTML = `
-        <h2 style = "float:right">Gesamtsumme: ${Math.floor(sum * 100)/100}€</h2>
+        <h2 style = "float:right; padding-bottom: 10%;">Gesamtsumme: ${truncateToTwoDecimals(sum)}€</h2>
     `
 
 

@@ -1,65 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../css/products.css">
-<link rel="stylesheet" href="../css/header.css">
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+const searchButton = document.getElementById('searchButton');
+const searchInupt = document.getElementById('searchInput');
+const productArea = document.getElementById('productArea');
 
-<title>Products</title>
-</head>
+let filteredProducts;
 
-<body>
-  <!-- Nav Bar + Searching -->
-  <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../html/index.html"><img src="../images/FirmenLogo.png" alt=""
-            style="width: 120px; height: 120px;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: flex; justify-content: space-between;">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                style="font-size: 22px; font-weight: bold;"><i class='bx bx-home'></i> Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="products.html" style="font-size: 22px; font-weight: bold;"><i
-                  class='bx bxs-coffee-bean'></i> Produkte</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="shoppingCart.html" style="font-size: 22px; font-weight: bold;"><i
-                  class='bx bx-cart'></i>
-                Einkaufswagen</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Benutzerseite.html" style="font-size: 22px; font-weight: bold;"><i class='bx bx-user'></i>
-                Benutzer</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html" style="font-size: 22px;"> Anmelden</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Suche" aria-label="Search" id = "searchInput">
-            <button class="btn btn-search" id = "searchButton">Suche</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <hr style="border: 5px solid black; margin: 0; margin-bottom: 5vh;">
-  </header>
+searchButton.addEventListener('click', function(event){
 
-  <!-- Product overview -->
+    event.preventDefault();
+    let query = searchInupt.value.toLowerCase();
 
-  <div class="container productArea" id = "productArea">
-    <!-- Reihe Eins Produkte -->
-    <div class="row">
+    filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(query)
+    );
+
+    displayProducts();
+});
+
+function displayProducts(){
+    console.log(filteredProducts.length);
+
+    productArea.innerHTML = '';
+
+    if(filteredProducts.length == 12)
+    {
+        productArea.innerHTML = `
+            <div class="row">
       <h1 style="text-align: center; font-weight: bold;">Unsere Klassiker</h1>
       <br>
       <br>
@@ -233,59 +198,73 @@
 
 
     </div>
-  </div>
+        `;
+    }
 
-  <script src="../extern/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/cart.js"></script>
-  <script src = "../js/products.js"></script>
-  <br>
-  <br>
-  <!-- Footer+Impressum -->
-  <footer>
-    <hr style="border: 5px solid black; margin: 0; margin-top: 5vh;">
-    <div class="row">
-      <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Custom Chocolate Company</strong></h5>
-            <p class="card-text">Burgstraße 1. | 72764 Reutlingen</p>
-            <p class="card-text">07121/67890 | info@schokolade.de</p>
-            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-            <button class="btn btn-search"><a href="datenschutz.html">
-                <strong>Datenschutz</strong></a></button>
-            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-            <button class="btn btn-search"><a href=""> <strong>AGB</strong></a></button>
-            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-            <button class="btn btn-search"><a href="impressum.html"> <strong>Impressum</strong></a></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><strong>Folgen Sie uns auf Social Media</strong></h5>
-            <ul class="social-icons">
-              <a href=""><i class="bx bxl-facebook-circle"></i></a>
-              <a href=""><i class="bx bxl-instagram"></i></a>
-              <a href=""><i class='bx bxl-youtube'></i></a>
-              <a href=""><i class="bx bxl-linkedin-square"></i></a>
-            </ul>
-            <hr style="border: 1px solid black; margin: 0; margin-top: 1vh; margin-bottom: 1vh;">
-            <h5 class="card-title"><strong>Zahlungsarten</strong></h5>
-            <img src="https://www.lindt.de/media/wysiwyg/zahlungsarten-logos-2025.png" alt="Zahlungsarten"
-              class=" ls-is-cached lazyloaded" width="365" height="64">
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bottom-bar" style="text-align: center;">
-      <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
-    </div>
-  </footer>
-  <!-- Arrow for Up moving -->
-  <a id="UpMove" href="#" class="btn btn-primary btn-lg">
-    <i class='bx bxs-up-arrow-circle'></i>
-  </a>
-</body>
+    else if(filteredProducts.length == 0) {
+        productArea.innerHTML = '<h2>Keine Einträge</h2>';
+    }
 
-</html>
+    else if (filteredProducts.length >= 1 && filteredProducts.length <= 4) {
+
+
+        filteredProducts.forEach(product => {
+                // Erstelle das äußere Div
+
+                const rowDiv = document.createElement('div');
+                rowDiv.className = "row"
+const productDiv = document.createElement("div");
+productDiv.className = "col-5 product1";
+
+// Erstelle das Bild-Container-Div
+const imgContainer = document.createElement("div");
+imgContainer.className = "imgContainer1";
+
+// Bild-Element
+const img = document.createElement("img");
+img.src = "../images/Produkte/vollmilch.png";
+img.alt = "";
+img.className = "img-fluid";
+
+// BuyBar-Div mit Button
+const buyBar = document.createElement("div");
+buyBar.className = "buyBar1";
+
+const button = document.createElement("button");
+button.id = "product0";
+button.className = "btn btn-dark";
+button.type = "button";
+button.textContent = "Shop Now";
+button.setAttribute("onclick", "add(event)");
+
+buyBar.appendChild(button);
+
+// Alles ins Bild-Container-Div einfügen
+imgContainer.appendChild(img);
+imgContainer.appendChild(buyBar);
+
+// Preis-Box
+const priceBox = document.createElement("div");
+priceBox.className = "priceBox1";
+
+const h3 = document.createElement("h3");
+h3.style.textAlign = "center";
+h3.style.fontWeight = "bold";
+
+const p = document.createElement("p");
+p.innerHTML = "VOLLMILCH<br>3,99 €";
+
+h3.appendChild(p);
+priceBox.appendChild(h3);
+
+// Alles zusammenfügen
+productDiv.appendChild(imgContainer);
+productDiv.appendChild(priceBox);
+
+// In ein bestehendes Container-Element einfügen, z. B. mit ID "productContainer"
+rowDiv.appendChild(productDiv)
+productArea.appendChild(rowDiv);
+            
+        });
+    }
+}
