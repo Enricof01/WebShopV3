@@ -1,19 +1,21 @@
 /*Search button*/
 button.btn-search {
-    background-color: lightgrey;
-    border-color: lightgrey;
-    color: black;
+    background-color: white;
+    border-color: #b47d49;
+    color: #b47d49;
+    border-radius: 0%;
 }
 
 button.btn-search:hover {
-    background-color: grey;
-    border-color: grey;
+    background-color: #b47d49;
+    border-color: #b47d49;
     color: white;
+    border-radius: 0%;
 }
 
 /*Style a Operator*/
 .btn a {
-    color: rgb(1, 0, 0);
+    color: #b47d49;
     text-decoration: none;
 }
 
@@ -29,7 +31,7 @@ button.btn-search:hover {
 }
 
 .social-icons a:hover {
-    color: grey;
+    color: #b47d49;
 }
 
 
@@ -48,16 +50,16 @@ h3 p {
     bottom: 20px;
     right: 20px;
     z-index: 100;
-    background-color: lightgray;
+    background-color: #b47d49;
     border: none;
-    font-size: 2rem;
+    font-size: 1rem;
     /* Größerer Button */
     padding: 10px;
     /* Größerer Button */
 }
 
 #UpMove:hover {
-    background-color: gray;
+    background-color: #b47d49;
     /* Farbe beim Hover */
 }
 
