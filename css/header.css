@@ -52,6 +52,7 @@ h3 p {
     z-index: 100;
     background-color: #b47d49;
     border: none;
+    z-index: 9999; 
     font-size: 1rem;
     /* Größerer Button */
     padding: 10px;

@@ -123,12 +123,15 @@ function add(event){
 
     cart.forEach(item =>{
         // console.log(item)
+        if(!(item.productNo == null))
+        {
         if(productNo == item.productNo)
         {
             alreadyInCart = true;
             cartIndex = cart.findIndex(product => product.name === item.name)
 
             console.log("Index of: " + cartIndex)
+        }
         }
     });
 
