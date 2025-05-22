@@ -68,3 +68,21 @@ h3 p {
     font-size: 2rem;
     /* Größeres Icon */
 }
+
+/* Ändert den Hintergrund der BuyBar */
+.buyBar1 {
+  background-color: #b47d49; /* Beispiel: Grün */
+  padding: 10px;
+  border-radius: 0px;
+}
+
+/* Optional: Stil für den Button anpassen */
+.buyBar1 .btn {
+  background-color: #ffffff;
+  color: black;            
+}
+
+.buyBar1 .btn:hover {
+  background-color: #b47d49;
+  color: white;
+}
