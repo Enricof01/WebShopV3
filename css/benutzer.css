@@ -41,23 +41,24 @@
     width: 60%;
     padding: 8px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 4px;
 }
 
 .container_Benutzer button {
     width: 42%;
     padding: 10px;
-    background-color: gray;
+    background-color: lightgray;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     margin-left: 30vw;
+    border-color: black;
 }
 
 .container_Benutzer button:hover {
-    background-color: lightgray;
+    background-color: #b47d49;
 }
 
 .container_Benutzer #profilePicPreview {
