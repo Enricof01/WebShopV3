@@ -53,14 +53,14 @@
   <div class="containerLogin">
     <div class="row">
       <div class="warpper">
-        <form action="">
+        <form action="../PHP/checklogin.php" method = "post">
           <h1>Login</h1>
           <div class="input-box">
-            <input type="text" placeholder="Anmeldename" required>
+            <input type="text" name = "username" placeholder="Anmeldename" required>
             <i class='bx bxs-user'></i>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Passwort" required>
+            <input type="password" name = "password" placeholder="Passwort" required>
             <i class='bx bxs-lock-alt'></i>
           </div>
           <div class="remember-forgot">
