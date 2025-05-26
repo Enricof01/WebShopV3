@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 $host = "localhost";
 $user = "root";  // Standardbenutzer in XAMPP
 $password = "";  // Standardpasswort in XAMPP (leer)
-$database = "login";  // Deine Datenbank "login"
+$database = "allgemeines";  // Deine Datenbank "login"
 
 // Verbindung herstellen
 $verbindung = new mysqli($host, $user, $password, $database);

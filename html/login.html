@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link href="../extern/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('error')) {
+    const error = params.get('error');
+    let message = '';
+    switch (error) {
+      case 'wrong_password':
+        message = 'Falsches Passwort!';
+        break;
+      case 'user_not_found':
+        message = 'Benutzer nicht gefunden!';
+        break;
+      case 'empty':
+        message = 'Bitte alle Felder ausfüllen!';
+        break;
+      default:
+        message = 'Unbekannter Fehler!';
+    }
+    document.getElementById('error-message').textContent = message;
+  }
+</script>
+
+
+<body>
+  <!-- Nav Bar + Searching -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../html/index.html"><img src="../images/FirmenLogo.png" alt=""
+            style="width: 80px; height: 80px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: flex; justify-content: space-between;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                style="font-size: 20px; font-weight: bold;"><i class='bx bx-home'></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html" style="font-size: 20px; font-weight: bold;"><i
+                  class='bx bxs-coffee-bean'></i> Produkte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shoppingCart.html" style="font-size: 20px; font-weight: bold;"><i class='bx bx-cart'></i>
+                Einkaufswagen</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Benutzerseite.html" style="font-size: 20px; font-weight: bold;"><i class='bx bx-user'></i>
+                Benutzer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html" style="font-size: 20px;"> Anmelden</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <hr style="border: 5px solid black; margin: 0; margin-bottom: 0vh;">
+  </header>
+  <!-- AnnmeldeFormular -->
+  <div class="containerLogin">
+    <div class="row">
+      <div class="warpper">
+ <form action="../php/login.php" method="POST">
+  <h1>Login</h1>
+
+  <div class="input-box">
+    <input type="email" name="email" placeholder="Email" required>
+    <i class='bx bxs-user'></i>
+  </div>
+
+  <div class="input-box">
+    <input type="password" name="passwort" placeholder="Passwort" required>
+    <i class='bx bxs-lock-alt'></i>
+  </div>
+
+  <div class="input-box">
+    <input type="text" name="code" placeholder="2FA-Code" required>
+    <i class='bx bxs-shield'></i>
+  </div>
+
+  <div class="remember-forgot">
+    <label><input type="checkbox">Remember me</label>
+    <a href="#"><b>Passwort vergessen?</b></a>
+  </div>
+
+  <button type="submit" class="login-btn">Login</button>
+
+  <div class="register-link">
+    <p>Sie haben noch keinen Account? <a href="registrierung.html">Registrierung</a></p>
+  </div>
+</form>
+
+
+    <!-- Hier wird die Fehlermeldung angezeigt -->
+  <div id="error-message" style="color: red; margin-top: 10px;"></div>
+    </form>
+
+      </div>
+    </div>
+  </div>
+  <script src="../extern/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Fotter + Impressum -->
+  <footer>
+    <hr style="border: 5px solid black; margin: 0;">
+    <div class="bottom-bar" style="text-align: center;">
+      <p>&copy; 1899 Custom Chocolate by ENKOMA</p>
+    </div>
+  </footer>
+</body>
+
+</html>
