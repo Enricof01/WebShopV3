@@ -9,7 +9,9 @@
     }
     if(isset($_POST['password']))
     {
-        $password=$_POST['password'];
+        // $password = hash('sha512', $_POST['password']); // SHA512 Hash
+
+        $password = $_POST['password'];
     }
 
     $dbFirstname="";$dbLastname="";$dbUsername="";
@@ -35,6 +37,7 @@
              $_SESSION['login'] = 111;
              $_SESSION['email'] = $row['email'];
              $_SESSION['time'] = time();
+             $_SESSION['showPopup'] = true;
              
             $bLoginSuccess=true;
         }
@@ -45,11 +48,12 @@
     //Weiterleitung
     if($bLoginSuccess)
     {
-        header("Location: test.php");
+        header("Location: ../html/index.php");
     }
     else
     {
-        header("Location: index.html");
+        header("Location: test.php");
+        echo "Failed";
     }
 
 ?>

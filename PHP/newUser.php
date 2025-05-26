@@ -27,7 +27,7 @@ session_start();
 
     if(isset($_POST['password']))
     {
-        $password = $_POST['password'];
+        $password = hash('sha512', $_POST['password']); // SHA512 Hash
     }
 
     if(isset($_POST['password']))
