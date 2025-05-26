@@ -1,3 +1,8 @@
+<?php 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -26,13 +31,19 @@
                             <a class="nav-link" href="Benutzerseite.php" style="font-size: 20px; font-weight: bold;"><i
                                     class='bx bx-user'></i>
                                 Benutzer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php" style="font-size: 20px;"> Anmelden</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php" style="font-size: 20px;"> Ausloggen</a>
-                        </li>
+
+                        <?php if (!isset($_SESSION['login']) || $_SESSION['login'] !== 111): ?>                    
+                            <li class="nav-item" id="login">
+                            <a class="nav-link" href="login.php" style="font-size: 20px;">Anmelden</a>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if (isset($_SESSION['login']) && $_SESSION['login'] === 111): ?>
+                            <li class="nav-item" id="logout">
+                            <a class="nav-link" href="logout.php" style="font-size: 20px;">Ausloggen</a>
+                            </li>
+                            <?php endif; ?>
+
                     </ul>
                 </div>
             </div>
